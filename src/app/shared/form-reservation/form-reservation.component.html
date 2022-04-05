@@ -1,0 +1,176 @@
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap">
+    <div>
+      <h1 tabindex="0" role="heading" aria-label="profile information" class="focus:outline-none text-3xl font-bold text-gray-800 mt-12">Reserve your car wash here</h1>
+      <p  role="contentinfo"  class=" focus:outline-nonetext-sm font-light leading-tight text-gray-600 mt-4">Enter the various information requested correctly. <br />We will contact you later for a confirmation of the time slots</p>
+
+    </div>
+    <div class="flex flex-wrap w-full px-5 py-5">
+      <div class="sm:w-full md:w-1/5 md:pr-10 sm:py-4 md:py-6">
+        <div class="flex relative pb-12">
+          <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div class="flex-shrink-0 w-10 h-10 rounded-full {{stepMake >=1 ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-400'}} inline-flex items-center justify-center relative z-10">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div class="flex-grow pl-4">
+            <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 1</h2>
+            <p class="leading-relaxed">Personal information.</p>
+          </div>
+        </div>
+        <div class="flex relative pb-12">
+          <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div class="flex-shrink-0 w-10 h-10 rounded-full {{stepMake >= 2 ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-400'}} inline-flex items-center justify-center relative z-10">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="flex-grow pl-4">
+            <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 2</h2>
+            <p class="leading-relaxed">Address.</p>
+          </div>
+        </div>
+        <div class="flex relative pb-12">
+          <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+            <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+          </div>
+          <div class="flex-shrink-0 w-10 h-10 rounded-full {{stepMake >= 3 ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-400'}} inline-flex items-center justify-center relative z-10">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="flex-grow pl-4">
+            <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">STEP 3</h2>
+            <p class="leading-relaxed">Information about the vehicle.</p>
+          </div>
+        </div>
+        <div class="flex relative">
+          <div class="flex-shrink-0 w-10 h-10 rounded-full {{stepMake === 4 ? 'bg-indigo-500 text-white' : 'bg-gray-200 text-gray-400'}} inline-flex items-center justify-center relative z-10">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+              <path d="M22 4L12 14.01l-3-3"></path>
+            </svg>
+          </div>
+          <div class="flex-grow pl-4">
+            <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">FINISH</h2>
+            <p class="leading-relaxed">Date range.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sm:w-full md:w-4/5 md:py-6">
+        <div *ngIf="stepMake === 1" class="space-y-5">
+          <form #form="ngForm" (ngSubmit)="save(form)">
+            <h2  role="heading" aria-label="enter Personal data" class="text-xl font-semibold leading-7 text-gray-800 mt-10">Personal information</h2>
+            <p class="text-sm font-light leading-none text-gray-600 mt-0.5">Enter your information</p>
+
+            <div class="mt-8 md:flex items-center">
+              <div class="flex flex-col">
+                <label class="mb-3 text-sm leading-none text-gray-800">Full name</label>
+                <input type="name" tabindex="0" aria-label="Enter first name" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+              <div class="flex flex-col md:ml-12 md:mt-0 mt-8">
+                <label class="mb-3 text-sm leading-none text-gray-800">Email</label>
+                <input type="email" tabindex="0" aria-label="Enter last name" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+              <div class="flex flex-col md:ml-12 md:mt-0 mt-8">
+                <label class="mb-3 text-sm leading-none text-gray-800">Phone</label>
+                <input type="tel" tabindex="0" aria-label="Enter last name" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+            </div>
+            <div class="my-4">
+              <button [disabled]="form.invalid" role="button" aria-label="Next step" class="disabled:text-gray-400 disabled:bg-gray-200 flex items-center justify-center py-4 px-7 focus:outline-none bg-white border rounded border-gray-400 hover:bg-gray-100  focus:ring-2 focus:ring-offset-2 focus:ring-gray-700">
+                <span class="text-sm font-medium text-center text-gray-800 capitalize">Next</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="stepMake === 2" class="space-y-5">
+          <form #form="ngForm" (ngSubmit)="save(form)">
+            <h2  role="heading" aria-label="enter Personal data" class="text-xl font-semibold leading-7 text-gray-800 mt-10">Address</h2>
+            <p class="text-sm font-light leading-none text-gray-600 mt-0.5">Enter your location information</p>
+            <div class="mt-12 md:flex items-center">
+              <div class="flex flex-col">
+                <label class="mb-3 text-sm leading-none text-gray-800">Zip Codes</label>
+                <input type="email" tabindex="0" aria-label="Enter email Address" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+              <div class="flex flex-col md:ml-12 md:mt-0 mt-8">
+                <label class="mb-3 text-sm leading-none text-gray-800">More details</label>
+                <textarea type="number" tabindex="0" aria-label="Enter phone number" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"></textarea>
+              </div>
+            </div>
+            <div class="justify-end my-4">
+              <button [disabled]="form.invalid" role="button" aria-label="Next step" class="disabled:text-gray-400 disabled:bg-gray-200 flex items-center justify-center py-4 px-7 focus:outline-none bg-white border rounded border-gray-400 hover:bg-gray-100  focus:ring-2 focus:ring-offset-2 focus:ring-gray-700">
+                <span class="text-sm font-medium text-center text-gray-800 capitalize">Next</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="stepMake === 3" class="space-y-5">
+          <form #form="ngForm" (ngSubmit)="save(form)">
+            <h2  role="heading" aria-label="enter Personal data" class="text-xl font-semibold leading-7 text-gray-800 mt-10">Information about the vehicle</h2>
+            <p class="text-sm font-light leading-none text-gray-600 mt-0.5">Make sure you enter the right information about your vehicle</p>
+            <div class="mt-12 md:flex items-center">
+              <div class="flex flex-col">
+                <label class="mb-3 text-sm leading-none text-gray-800">Brand</label>
+                <input type="text" tabindex="0" aria-label="Enter date of birth" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+              <div class="flex flex-col md:ml-12 md:mt-0 mt-8">
+                <label class="mb-3 text-sm leading-none text-gray-800">Model</label>
+                <input type="text" tabindex="0" aria-label="Enter date of birth" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+            </div>
+            <div class="my-4">
+              <button [disabled]="form.invalid" role="button" aria-label="Next step" class="disabled:text-gray-400 disabled:bg-gray-200 flex items-center justify-center py-4 px-7 focus:outline-none bg-white border rounded border-gray-400 hover:bg-gray-100  focus:ring-2 focus:ring-offset-2 focus:ring-gray-700">
+                <span class="text-sm font-medium text-center text-gray-800 capitalize">Next</span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="stepMake === 4" class="space-y-5">
+          <form #form="ngForm" (ngSubmit)="save(form)">
+            <h2  role="heading" aria-label="enter Personal data" class="text-xl font-semibold leading-7 text-gray-800 mt-10">Date range</h2>
+            <p class="text-sm font-light leading-none text-gray-600 mt-0.5">Please choose three date ranges</p>
+            <div class="mt-12 md:flex items-center">
+              <div class="flex flex-col">
+                <label class="mb-3 text-sm leading-none text-gray-800">Day 1</label>
+                <input type="datetime-local" tabindex="0" aria-label="Enter date of birth" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+              <div class="flex flex-col md:ml-12 md:mt-0 mt-8">
+                <label class="mb-3 text-sm leading-none text-gray-800">Day 2</label>
+                <input type="datetime-local" tabindex="0" aria-label="Enter date of birth" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+              <div class="flex flex-col md:ml-12 md:mt-0 mt-8">
+                <label class="mb-3 text-sm leading-none text-gray-800">Day 3</label>
+                <input type="datetime-local" tabindex="0" aria-label="Enter date of birth" class="w-64 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200" />
+              </div>
+            </div>
+            <div class="mt-4">
+              <div class="py-4 flex items-center">
+                <div class="bg-white dark:bg-gray-800 border rounded-sm border-gray-400 dark:border-gray-700 w-4 h-4 flex flex-shrink-0 justify-center items-center relative">
+                  <input type="checkbox" required name="sure" tabindex="0" aria-label="I agree with the terms of service" type="checkbox" class="checkbox opacity-0 absolute cursor-pointer w-full h-full" />
+                  <div class="check-icon hidden bg-blue-500 text-white rounded-sm">
+                    <svg class="icon icon-tabler icon-tabler-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" />
+                      <path d="M5 12l5 5l10 -10" />
+                    </svg>
+                  </div>
+                </div>
+                <p class="text-sm leading-none ml-2">The information entered <span class="text-indigo-700">is correct</span></p>
+              </div>
+            </div>
+            <div class="my-4">
+              <button [disabled]="form.invalid" role="button" aria-label="Next step" class="disabled:text-gray-400 disabled:bg-gray-200 flex items-center justify-center py-4 px-7 focus:outline-none bg-white border rounded border-gray-400 hover:bg-gray-100  focus:ring-2 focus:ring-offset-2 focus:ring-gray-700">
+                <span class="text-sm font-medium text-center text-gray-800 capitalize">Finish</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
