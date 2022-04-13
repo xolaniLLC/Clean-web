@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {Reservation} from "../../models/reservation";
+import {AlertService} from "../../services/alert.service";
+import {ReservationService} from "../../services/reservation.service";
+import {SendEmailService} from "../../services/send-email.service";
+import {SendSmsService} from "../../services/send-sms.service";
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-form-reservation',
@@ -7,15 +13,65 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormReservationComponent implements OnInit {
 
-  stepMake = 4;
+  isLoading = false;
+  tmpReservation: Reservation = new Reservation();
+  allResponsables: any[] = [];
+  sure = false;
 
-  constructor() { }
+  constructor(private userService: UserService, private alertService: AlertService, private reservationService: ReservationService, private sendEmail: SendEmailService, private sendSMS: SendSmsService) { }
 
   ngOnInit(): void {
+    this.userService.getAllResponsable().then(
+      (data) => {
+        this.allResponsables = data;
+      }
+    );
   }
 
   save(form: any) {
+    if(!this.tmpReservation.email && !this.tmpReservation.phone) {
+      this.isLoading = false;
+      this.alertService.print('You must at least enter a phone number or your email address', 'warning');
+    } else {
 
+      this.isLoading = true;
+      const message = 'Dear ' + this.tmpReservation.noms + ', \n\n' +
+        'Thank you for using our service, a member of our team will contact you as soon as possible for a confirmation of the date.';
+      const messageAdmin = 'New reservation : \n, ' +
+        'Name :' + this.tmpReservation.noms + '\n, ' +
+        'Phone :' + this.tmpReservation.phone + '\n, ' +
+        'Email :' + this.tmpReservation.email + '\n, ' +
+        'ZipCode :' + this.tmpReservation.zipCode + '\n, ' +
+        'More detail :' + this.tmpReservation.detailAdress + '\n, ' +
+        'Brand :' + this.tmpReservation.brand + '\n, ' +
+        'Model :' + this.tmpReservation.model + '\n, ' +
+        'Year :' + this.tmpReservation.annee + '\n, ' +
+        'Date reservation 1 :' + this.tmpReservation.dateTimeReserve1 + '\n, ' +
+        'Date reservation 2 :' + this.tmpReservation.dateTimeReserve2 + '\n, ' +
+        'Date reservation 3 :' + this.tmpReservation.dateTimeReserve3 + '\n, ';
+
+      this.reservationService.addReservation(this.tmpReservation).then(
+        () => {
+
+          this.tmpReservation = new Reservation();
+          this.isLoading = false;
+          this.alertService.print('Operation successfully completed', 'success');
+
+          if(this.tmpReservation.email) { this.sendEmail.sendMessageEmail(this.tmpReservation.email, message).then(); }
+          if(this.tmpReservation.phone) { this.sendSMS.sendMessageSms([this.tmpReservation.phone], message).then(); }
+
+          const pointe = this;
+          pointe.allResponsables.forEach(function (doc) {
+            pointe.sendEmail.sendMessageEmail(doc.email, messageAdmin).then();
+            pointe.sendSMS.sendMessageSms([doc.phone], messageAdmin).then();
+          });
+
+        }, (error) => {
+          this.isLoading = false;
+          this.alertService.print(error, 'danger');
+        }
+      );
+    }
   }
 
 }
