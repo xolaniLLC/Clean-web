@@ -12,6 +12,8 @@ export class Reservation {
   brand: string;
   model: string;
   annee: string;
+  confirmInfos: boolean;
+  infosPayment: any;
   dateTimeReserve1: string;
   dateTimeReserve2: string;
   dateTimeReserve3: string;
@@ -35,5 +37,7 @@ export class Reservation {
     this.dateTimeReserve3 = '';
     this.dateTimeConfirmer = '';
     this.auteurConfirmation = '';
+    this.confirmInfos = false;
+    this.infosPayment = null;
   }
 }

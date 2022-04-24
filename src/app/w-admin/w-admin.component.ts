@@ -22,10 +22,13 @@ export class WAdminComponent implements OnInit {
   allUser: Utilisateur[] = [];
   allReservationFinish: Reservation[] = [];
   allReservationAttente: Reservation[] = [];
-  menu = 0;
+  menu = 1;
   table_interact = true;
   isLoading = false;
   dropDownList: any;
+
+  pageReservation = 0;
+  nbreLimitEltPrPageReservation = 6;
 
   constructor(private reservationService: ReservationService, private authService: AuthentificationService, private userService: UserService, private alertService: AlertService) { }
 
@@ -62,6 +65,10 @@ export class WAdminComponent implements OnInit {
         this.alertService.print(error, 'danger');
       }
     );
+  }
+
+  recupNombreEntier(nbr: number) { //Par excès
+    return Math.ceil(nbr);
   }
 
   updatePermission(user: Utilisateur, indexPermission: number) {
