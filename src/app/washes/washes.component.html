@@ -1,0 +1,166 @@
+<app-navbar></app-navbar>
+
+<section class="p-5">
+  <div class="container mx-auto mt-6">
+    <button (click)="tmpReservation.adress ? tmpReservation.adress = '' : '';  tmpReservation.price !== 0 ? tmpReservation.price = 0 : ''" [disabled]="!tmpReservation.adress" type="button" class="disabled:bg-gray-400 disabled:border-r-8 disabled:border-b-8 mt-5 border-black border-b-8 border-l-2 border-t-2 border-r-8 hover:border-r-4 hover:border-b-4 text-black bg-lime-500 focus:ring-4 focus:ring-lime-300 font-medium text-xl px-10 py-2.5 mr-2 mb-2">
+      Preview
+    </button>
+  </div>
+</section>
+
+<section *ngIf="!tmpReservation.adress" class="p-5">
+  <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-16 gap-8">
+    <div class="m-auto space-y-3 w-full">
+      <label class="text-2xl font-medium">
+        Where do you want to book?
+      </label>
+      <form #form="ngForm" (ngSubmit)="tmpReservation.adress = form.value.adress">
+        <input
+          type="text"
+          ngModel
+          [disabled]="isLoading"
+          required
+          name="adress"
+          id="adress"
+          placeholder="Write your adress"
+          class="border-black border-b-8 border-l-2 border-t-2 border-r-8 w-full py-3 px-12 text-xl"/>
+        <button [disabled]="form.invalid" type="submit" class="disabled:bg-gray-400 disabled:border-r-8 disabled:border-b-8 mt-5 border-black border-b-8 border-l-2 border-t-2 border-r-8 hover:border-r-4 hover:border-b-4 text-black bg-lime-500 focus:ring-4 focus:ring-lime-300 font-medium text-xl px-10 py-2.5 mr-2 mb-2">
+          Validate the address
+        </button>
+      </form>
+      <div class="w-full flex items-center justify-between py-3">
+        <hr class="w-full bg-gray-400" />
+        <p class="text-base font-medium leading-4 px-2.5 text-gray-800">OR</p>
+        <hr class="w-full bg-gray-400" />
+      </div>
+      <div class="w-full flex items-center justify-between">
+        <button (click)="tmpReservation.adress = ad" *ngFor="let ad of ['City 1', 'City 2', 'City 3']" type="submit" class="{{ tmpReservation.adress !== ad ? 'bg-gray-400 border-r-8 border-b-8' : 'border-b-8 border-l-2 border-t-2 border-r-8 hover:border-r-4 hover:border-b-4 text-black bg-lime-500 focus:ring-4 focus:ring-lime-300 font-bold'}} mt-5 border-black text-xl px-10 py-2.5 mr-2 mb-2">
+          {{ad}}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="tmpReservation.price === 0 && tmpReservation.adress" class="p-5">
+  <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 pt-16 gap-8">
+    <!-- Remove class [ h-24 ] when adding a card block -->
+    <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
+    <div>
+      <div class="border-black border-l-2 border-t-2 border-b-4 border-r-4 border-black h-96 bg-lime-500"></div>
+
+      <p class="py-8 text-center">
+        <button (click)="tmpReservation.price = 100; tmpReservation.offre = 'Access'" type="button" class="shadow-2xl border-black border-b-8 border-l-2 border-t-2 border-r-8 text-black bg-lime-500 hover:border-r-4 hover:border-b-4 focus:ring-4 focus:ring-lime-300 font-bold text-3xl px-10 py-2.5 mr-2 mb-2">
+          BOOK
+        </button>
+      </p>
+    </div>
+
+    <div>
+      <div class="border-black border-l-2 border-t-2 border-b-4 border-r-4 border-black h-96 bg-lime-500"></div>
+
+      <p class="py-8 text-center">
+        <button (click)="tmpReservation.price = 200; tmpReservation.offre = 'Gold'" type="button" class="shadow-2xl border-black border-b-8 border-l-2 border-t-2 border-r-8 text-black bg-lime-500 hover:border-r-4 hover:border-b-4 focus:ring-4 focus:ring-lime-300 font-bold text-3xl px-10 py-2.5 mr-2 mb-2">
+          BOOK
+        </button>
+      </p>
+    </div>
+
+    <div>
+      <div class="border-black border-l-2 border-t-2 border-b-4 border-r-4 border-black h-96 bg-lime-500"></div>
+
+      <p class="py-8 text-center">
+        <button (click)="tmpReservation.price = 300; tmpReservation.offre = 'Premium'" type="button" class="border-black border-b-8 border-l-2 border-t-2 border-r-8 hover:border-r-4 hover:border-b-4 text-black bg-lime-500 focus:ring-4 focus:ring-lime-300 font-bold text-3xl px-10 py-2.5 mr-2 mb-2">
+          BOOK
+        </button>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="tmpReservation.price > 0 && !tmpReservation.detailPaiement" class="p-5">
+  <div class="items-center container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pt-16 gap-8">
+    <div>
+      <form #form="ngForm" (ngSubmit)="pay()">
+
+        <div class="m-auto space-y-3">
+          <label class="text-xl font-medium">
+            Name
+          </label>
+          <input
+            type="text"
+            [(ngModel)]="tmpReservation.noms"
+            [disabled]="isLoading"
+            name="noms"
+            id="noms"
+            placeholder="Write your name"
+            class="border-black border-b-8 border-l-2 border-t-2 border-r-8 w-full py-3 px-12 text-xl"/>
+        </div>
+
+        <div class="m-auto space-y-3 mt-5">
+          <label class="text-xl font-medium">
+            Phone number (123-456-7890) <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="tel"
+            [(ngModel)]="tmpReservation.phone"
+            [disabled]="isLoading"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
+            name="floating_phone"
+            id="floating_phone"
+            placeholder="Write your name"
+            class="border-black border-b-8 border-l-2 border-t-2 border-r-8 w-full py-3 px-12 text-xl"/>
+        </div>
+
+        <div class="m-auto space-y-3 mt-5">
+          <label class="text-xl font-medium">
+            Phone number (123-456-7890) <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="email"
+            [(ngModel)]="tmpReservation.email"
+            [disabled]="isLoading"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
+            name="floating_email"
+            id="floating_email"
+            placeholder="Write your name"
+            class="border-black border-b-8 border-l-2 border-t-2 border-r-8 w-full py-3 px-12 text-xl"/>
+        </div>
+
+        <button [disabled]="!tmpReservation.adress || !tmpReservation.phone || !tmpReservation.email" type="submit" class="disabled:bg-gray-400 disabled:border-r-8 disabled:border-b-8 mt-8 border-black border-b-8 border-l-2 border-t-2 border-r-8 hover:border-r-4 hover:border-b-4 text-black bg-lime-500 focus:ring-4 focus:ring-lime-300 font-medium text-xl px-10 py-2.5 mr-2 mb-2">
+          PAY
+        </button>
+      </form>
+    </div>
+    <div>
+      <img class="rounded" src="https://www.rc-truckncar-tuning.com/wp-content/uploads/2021/12/Car-Washing.jpeg">
+    </div>
+  </div>
+</section>
+
+<section *ngIf="tmpReservation.detailPaiement" class="p-5">
+  <div class="items-center container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pt-16 gap-8">
+    <div>
+      <img class="rounded" src="https://www.shell.ca/en_ca/motorists/shell-canada-car-wash/_jcr_content/pagePromo/image.img.960.jpeg/1475788848187/27696-bnr-p5-cw-1900x1200-new.jpeg">
+    </div>
+    <div>
+      <div class="w-full">
+        <h1 role="heading" tabindex="0" class="text-3xl font-bold 2xl:leading-10 leading-0 text-left text-gray-800">Payment successful</h1>
+        <h2 role="contentinfo" tabindex="0" class="text-base leading-normal text-left text-gray-600 mt-5">Please select when you would like your next wash</h2>
+      </div>
+      <div class="mx-auto my-10">
+        <form (ngSubmit)="save()">
+          <input [(ngModel)]="tmpReservation.dateTimeReserve" type="date" name="dateReservation" class="h-fit w-fit p-16 border border-lime-500" placeholder="Select the reservation date">
+          <br>
+          <button [disabled]="!tmpReservation.dateTimeReserve" type="submit" class="disabled:bg-gray-400 disabled:border-r-8 disabled:border-b-8 mt-5 border-black border-b-8 border-l-2 border-t-2 border-r-8 hover:border-r-4 hover:border-b-4 text-black bg-lime-500 focus:ring-4 focus:ring-lime-300 font-bold text-3xl px-10 py-2.5 mr-2 mb-2">
+            Validate
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

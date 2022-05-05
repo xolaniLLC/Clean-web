@@ -1,0 +1,363 @@
+<nav class="bg-white shadow xl:block hidden">
+  <div class="mx-auto container px-20 py-2 xl:py-0">
+    <div class="flex items-center justify-between">
+      <div class="inset-y-0 left-0 flex items-center xl:hidden">
+        <div
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-100 focus:outline-none transition duration-150 ease-in-out">
+          <div class="visible xl:hidden">
+            <ul class="p-2 border-r bg-white absolute rounded left-0 right-0 shadow mt-8 md:mt-8 hidden">
+              <li
+                class="flex xl:hidden cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
+                       width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" fill="none" stroke-linecap="round"
+                       stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                    <rect x="4" y="4" width="6" height="6" rx="1"></rect>
+                    <rect x="14" y="4" width="6" height="6" rx="1"></rect>
+                    <rect x="4" y="14" width="6" height="6" rx="1"></rect>
+                    <rect x="14" y="14" width="6" height="6" rx="1"></rect>
+                  </svg>
+                  <span class="ml-2 font-bold">Dashboard</span>
+                </div>
+              </li>
+              <li class="flex xl:hidden flex-col cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none flex justify-center"
+                  onclick="dropdownHandler(this)">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
+                       width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" fill="none" stroke-linecap="round"
+                       stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
+                    </path>
+                  </svg>
+                  <span class="ml-2 font-bold">Products</span>
+                </div>
+              </li>
+              <li
+                class="flex xl:hidden cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass"
+                     width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <polyline points="8 16 10 10 16 8 14 14 8 16"></polyline>
+                  <circle cx="12" cy="12" r="9"></circle>
+                </svg>
+                <span class="ml-2 font-bold">Performance</span>
+              </li>
+              <li
+                class="border-b border-gray-300 flex xl:hidden cursor-pointer text-gray-600 text-sm leading-3 tracking-normal pt-2 pb-4 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code"
+                     width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                     fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"></path>
+                  <polyline points="7 8 3 12 7 16"></polyline>
+                  <polyline points="17 8 21 12 17 16"></polyline>
+                  <line x1="14" y1="4" x2="10" y2="20"></line>
+                </svg>
+                <span class="ml-2 font-bold">Deliverables</span>
+              </li>
+              <li
+                class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-indigo-700 flex items-center focus:text-indigo-700 focus:outline-none">
+                <div class="flex items-center">
+                  <div
+                    class="w-12 cursor-pointer flex text-sm border-2 border-transparent rounded focus:outline-none focus:border-white transition duration-150 ease-in-out">
+                    <img class="rounded h-10 w-10 object-cover"
+                         src="https://tuk-cdn.s3.amazonaws.com/assets/components/horizontal_navigation/hn_1.png"
+                         alt="logo" />
+                  </div>
+                  <p class="text-sm ml-2 cursor-pointer">Jane Doe</p>
+                  <div class="sm:ml-2 text-white relative">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="icon icon-tabler icon-tabler-chevron-down cursor-pointer" width="20"
+                         height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                         fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z"></path>
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user"
+                       width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" fill="none" stroke-linecap="round"
+                       stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <circle cx="12" cy="7" r="4" />
+                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                  </svg>
+                  <span class="ml-2">Profile</span>
+                </div>
+              </li>
+            </ul>
+            <svg onclick="MenuHandler(this,true)" aria-haspopup="true" aria-label="Main Menu"
+                 xmlns="http://www.w3.org/2000/svg" class="show-m-menu icon icon-tabler icon-tabler-menu"
+                 width="28" height="28" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                 fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z"></path>
+              <line x1="4" y1="8" x2="20" y2="8"></line>
+              <line x1="4" y1="16" x2="20" y2="16"></line>
+            </svg>
+          </div>
+          <div class="hidden close-m-menu text-gray-700" onclick="MenuHandler(this,false)">
+            <svg aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start">
+        <div class="flex items-center">
+          <a href="./home" class="hidden sm:block text-3xl text-violet-700 font-medium leading-normal pl-3 cursor-pointer">Ninu</a>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="hidden xl:flex md:mr-6 xl:mr-16 uppercase">
+          <a
+             class="cursor-pointer hover:text-red-600 font-bold flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            Services
+          </a>
+          <a
+             class="cursor-pointer hover:text-red-600 font-bold flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            Membership
+          </a>
+          <a
+             class="cursor-pointer hover:text-red-600 font-bold flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            Weddings
+          </a>
+          <a
+             class="cursor-pointer hover:text-red-600 font-bold flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none transition duration-150 ease-in-out">
+            Become a beauty pro
+          </a>
+        </div>
+        <div class="hidden xl:flex items-center space-x-5">
+          <div class="items-center text-right items-end content-end justify-end justify-items-end right-14 flex" *ngIf="isConnected === 0 || (isConnected === 1 && !currentUser)">
+            <svg role="status" class="mx-5 w-8 h-8 text-violet-900 animate-spin dark:text-gray-600 fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+            </svg>
+          </div>
+          <div class="uppercase flex px-5 py-6 items-center relative hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" (click)="isList === 8 ? (isList = 0) : (isList = 8)" *ngIf="isConnected === 1 && currentUser">
+            <ul *ngIf="isList === 8"
+                class="p-2 w-40 border-r bg-white absolute rounded right-0 shadow top-0 mt-16 font-semibold z-50">
+              <li
+                class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-violet-700 focus:text-violet-700 focus:outline-none">
+                <div class="flex items-center">
+                  <span class="ml-2">MY PROFILE</span>
+                </div>
+              </li>
+              <li (click)="goDeconnect()"
+                  class="cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-2 py-2 hover:text-violet-700 flex items-center focus:text-violet-700 focus:outline-none">
+                <span class="ml-2">SIGN OUT</span>
+              </li>
+            </ul>
+            <a
+              class="cursor-pointer font-bold flex items-center text-sm leading-5 text-gray-700 hover:text-red-600 focus:outline-none">
+              HI, {{currentUser.nom}}
+            </a>
+            <div class="text-gray-600 ml-2">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                   class="icon icon-tabler icon-tabler-chevron-down cursor-pointer" width="20"
+                   height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z"></path>
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+          </div>
+          <a routerLink="../login" *ngIf="isConnected === -1"
+             class="font-bold flex px-5 items-center py-6 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 hover:text-red-600 focus:outline-none transition duration-150 ease-in-out">
+            SIGN IN
+          </a>
+          <a routerLink="../book"
+             class="bg-violet-900 font-bold flex px-5 items-center py-6 text-sm leading-5 text-white focus:bg-violet-800 focus:outline-none transition duration-150 ease-in-out">
+            BOOK
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav class="bg-white shadow xl:block hidden sticky top-0 z-40 transition ease-in:-translate-y-2 delay-150 duration-300" *ngIf="scrolled">
+  <div class="mx-auto  py-2 xl:py-0">
+    <div class="flex items-center justify-between">
+
+      <div class="flex w-full sm:w-auto items-center sm:items-stretch justify-end sm:justify-start px-20">
+        <div class="flex items-center">
+          <a href="./home" class="hidden sm:block text-3xl text-violet-700 font-medium leading-normal pl-3 cursor-pointer">Ninu</a>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="hidden xl:flex items-center space-x-5 w-full">
+          <a routerLink="../book"
+             class="w-full bg-violet-900 font-bold flex px-20 items-center py-6 text-sm leading-5 text-white focus:bg-violet-800 focus:outline-none transition duration-150 ease-in-out">
+            BOOK
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<nav>
+  <div class="py-4 px-6 w-full flex xl:hidden justify-between items-center bg-white fixed top-0 z-40">
+    <div class="w-24">
+      <a href="./home" class="cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="43" height="44" viewBox="0 0 43 44" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M37.8735 0C36.1688 0 34.7818 1.37956 34.7818 3.0751C34.7818 4.77063 36.1688 6.15019 37.8735 6.15019C39.5782 6.15019 40.9653 4.77063 40.9653 3.0751C40.9653 1.37956 39.5782 0 37.8735 0ZM37.8735 4.61264C37.021 4.61264 36.3277 3.92305 36.3277 3.0751C36.3277 2.22714 37.021 1.53755 37.8735 1.53755C38.7261 1.53755 39.4194 2.22714 39.4194 3.0751C39.4194 3.92305 38.7261 4.61264 37.8735 4.61264ZM26.6663 1.0513C26.1828 1.0513 25.7909 1.44107 25.7909 1.92193C25.7909 2.4028 26.1828 2.79238 26.6663 2.79238C27.1497 2.79238 27.5416 2.40261 27.5416 1.92193C27.5416 1.44107 27.1497 1.0513 26.6663 1.0513ZM43 13.4535C43 13.9342 42.6081 14.324 42.1247 14.324C41.6412 14.324 41.2493 13.9342 41.2493 13.4535C41.2493 12.9727 41.6412 12.5829 42.1247 12.5829C42.6081 12.5829 43 12.9729 43 13.4535ZM18.1654 2.59019L35.1698 12.4044C35.4079 12.5418 35.5548 12.7951 35.5548 13.0692V33.0573C35.5548 33.3273 35.4123 33.5772 35.1803 33.7161L18.1758 43.8901C18.0533 43.9633 17.915 44 17.7774 44C17.6398 44 17.5016 43.9633 17.3789 43.8901L0.374484 33.7161C0.142219 33.5772 0 33.3271 0 33.0573V13.0692C0 12.7951 0.146857 12.5418 0.384919 12.4044L17.3894 2.59019C17.6296 2.45124 17.9254 2.45124 18.1654 2.59019ZM17.7774 4.14388L33.2524 13.0751L23.0207 19.0887L18.5503 16.4735V12.3004C18.5503 11.8758 18.2042 11.5316 17.7774 11.5316C17.3505 11.5316 17.0044 11.8758 17.0044 12.3004V16.4735L11.9752 19.4158C11.7389 19.554 11.5939 19.8057 11.5939 20.0783V25.8047L1.54586 31.7102V13.5118L17.7774 4.14388ZM2.28227 33.0632L17.7774 42.3341L34.0091 32.6225V14.4162L23.961 20.322V26.4081C23.961 26.6807 23.8161 26.9325 23.5798 27.0706L18.5505 30.0125V33.826C18.5505 34.2506 18.2044 34.5948 17.7776 34.5948C17.3507 34.5948 17.0046 34.2506 17.0046 33.826V30.0125L12.2274 27.2182L2.28227 33.0632Z"
+                fill="#667EEA" />
+        </svg>
+      </a>
+    </div>
+    <div class="flex items-center">
+      <div class="relative mr-6">
+        <button routerLink="../book"
+          class="focus:outline-none bg-violet-900 transition duration-150 ease-in-out font-semibold hover:bg-violet-800 text-white px-5 py-2 text-xs">BOOK</button>
+      </div>
+      <div id="menu" class="text-gray-800" (click)="isMenu=true">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="24"
+             height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <!--Mobile responsive sidebar-->
+  <div *ngIf="isMenu" class="absolute w-full h-full  z-40 xl:hidden" id="mobile-nav">
+    <div class="bg-gray-800 opacity-50 w-full h-full" (click)="isMenu=false"></div>
+    <div
+      class="w-64 z-40 fixed overflow-y-auto top-0 bg-white shadow h-full flex-col justify-between xl:hidden pb-4 transition duration-150 ease-in-out">
+      <div class="px-6 h-full">
+        <div class="flex flex-col justify-between h-full w-full">
+          <div>
+            <div class="mt-6 flex w-full items-center justify-between">
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="43" height="44" viewBox="0 0 43 44"
+                       fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M37.8735 0C36.1688 0 34.7818 1.37956 34.7818 3.0751C34.7818 4.77063 36.1688 6.15019 37.8735 6.15019C39.5782 6.15019 40.9653 4.77063 40.9653 3.0751C40.9653 1.37956 39.5782 0 37.8735 0ZM37.8735 4.61264C37.021 4.61264 36.3277 3.92305 36.3277 3.0751C36.3277 2.22714 37.021 1.53755 37.8735 1.53755C38.7261 1.53755 39.4194 2.22714 39.4194 3.0751C39.4194 3.92305 38.7261 4.61264 37.8735 4.61264ZM26.6663 1.0513C26.1828 1.0513 25.7909 1.44107 25.7909 1.92193C25.7909 2.4028 26.1828 2.79238 26.6663 2.79238C27.1497 2.79238 27.5416 2.40261 27.5416 1.92193C27.5416 1.44107 27.1497 1.0513 26.6663 1.0513ZM43 13.4535C43 13.9342 42.6081 14.324 42.1247 14.324C41.6412 14.324 41.2493 13.9342 41.2493 13.4535C41.2493 12.9727 41.6412 12.5829 42.1247 12.5829C42.6081 12.5829 43 12.9729 43 13.4535ZM18.1654 2.59019L35.1698 12.4044C35.4079 12.5418 35.5548 12.7951 35.5548 13.0692V33.0573C35.5548 33.3273 35.4123 33.5772 35.1803 33.7161L18.1758 43.8901C18.0533 43.9633 17.915 44 17.7774 44C17.6398 44 17.5016 43.9633 17.3789 43.8901L0.374484 33.7161C0.142219 33.5772 0 33.3271 0 33.0573V13.0692C0 12.7951 0.146857 12.5418 0.384919 12.4044L17.3894 2.59019C17.6296 2.45124 17.9254 2.45124 18.1654 2.59019ZM17.7774 4.14388L33.2524 13.0751L23.0207 19.0887L18.5503 16.4735V12.3004C18.5503 11.8758 18.2042 11.5316 17.7774 11.5316C17.3505 11.5316 17.0044 11.8758 17.0044 12.3004V16.4735L11.9752 19.4158C11.7389 19.554 11.5939 19.8057 11.5939 20.0783V25.8047L1.54586 31.7102V13.5118L17.7774 4.14388ZM2.28227 33.0632L17.7774 42.3341L34.0091 32.6225V14.4162L23.961 20.322V26.4081C23.961 26.6807 23.8161 26.9325 23.5798 27.0706L18.5505 30.0125V33.826C18.5505 34.2506 18.2044 34.5948 17.7776 34.5948C17.3507 34.5948 17.0046 34.2506 17.0046 33.826V30.0125L12.2274 27.2182L2.28227 33.0632Z"
+                          fill="#667EEA"></path>
+                  </svg>
+                  <a href="./home" class="text-base md:text-2xl text-gray-800 ml-3 cursor-pointer">Ninu</a>
+                </div>
+                <div id="cross" class="text-gray-800" (click)="isMenu=false">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x"
+                       width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" fill="none" stroke-linecap="round"
+                       stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <ul class="f-m-m uppercase font-bold text-sm">
+              <a class="cursor-pointer">
+                <li class="text-gray-800 pt-10">
+                  <div class="flex items-center">
+                    <p class="text-indigo-700 ml-3">Services</p>
+                  </div>
+                </li>
+              </a>
+              <a class="cursor-pointer">
+                <li class="text-gray-800 pt-8">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <p class="text-gray-800 ml-3">Membership
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </a>
+              <a class="cursor-pointer">
+                <li class="text-gray-800 pt-8">
+                  <div class="flex items-center">
+                    <p class="text-gray-800 ml-3">Performance</p>
+                  </div>
+                </li>
+              </a>
+              <li class="text-gray-800 pt-8 cursor-pointer">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <p class="text-gray-800 ml-3">Weddings
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="text-gray-800 pt-8 cursor-pointer">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center">
+                    <p class="text-gray-800 ml-3">Become a beauty pro
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full pt-4">
+            <div class="items-center text-right items-center content-center justify-center justify-items-end flex" *ngIf="isConnected === 0 || (isConnected === 1 && !currentUser)">
+              <svg role="status" class="mx-5 w-8 h-8 text-violet-900 animate-spin dark:text-gray-600 fill-white" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+              </svg>
+            </div>
+            <a routerLink="../login" *ngIf="isConnected === -1"
+               class="font-bold flex px-5 items-center py-6 text-sm leading-5 text-black hover:bg-gray-100 focus:bg-gray-100 hover:text-red-600 focus:outline-none transition duration-150 ease-in-out">
+              SIGN IN
+            </a>
+            <div class="border-t border-gray-300" *ngIf="isConnected === 1 && currentUser">
+              <div class="w-full flex items-center justify-between pt-1">
+                <div class="flex items-center">
+                  <img alt="profile-pic"
+                       src="{{ currentUser.photo ? currentUser.photo : 'assets/images/user.png' }}"
+                       class="w-8 h-8 rounded-md" />
+                  <p class=" text-gray-800 text-base font-semibold leading-4 ml-2">{{currentUser.nom}}</p>
+                </div>
+                <ul class="flex">
+                  <li class="cursor-pointer text-gray-800 pt-5 pb-3">
+                    <div class="w-6 h-6 md:w-8 md:h-8">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                           class="icon icon-tabler icon-tabler-messages" viewBox="0 0 24 24"
+                           stroke-width="1" stroke="currentColor" fill="none"
+                           stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                  </li>
+                  <li class="cursor-pointer text-gray-800 pt-5 pb-3 pl-3 focus:text-red-600" (click)="goDeconnect()">
+                    <div class="w-6 h-6 md:w-8 md:h-8">
+                      <svg xmlns="http://www.w3.org/2000/svg"
+                           class="icon icon-tabler icon-tabler-bell" viewBox="0 0 24 24"
+                           stroke-width="1" stroke="currentColor" fill="none"
+                           stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

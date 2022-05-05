@@ -1,0 +1,159 @@
+<div class="w-full h-2.5">
+  <div class="bg-violet-900 h-2.5" [style]="'width: ' + (etape * 25) + '%'"></div>
+</div>
+<header class="bg-white shadow-md py-3 px-7">
+  <div class="container mx-auto">
+    <nav class="justify-center grid grid-cols-3">
+      <div class="justify-center items-center text-center flex">
+        <svg *ngIf="etape > 1" (click)="previewEtape()" xmlns="http://www.w3.org/2000/svg" class="hover:text-violet-900 flex cursor-pointer focus:outline-none text-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+        </svg>
+      </div>
+      <div class="justify-center items-center text-center">
+        <!--svg class="cursor-pointer" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 17H0H1ZM7 17H6H7ZM17 27V28V27ZM27 17H28H27ZM17 0C12.4913 0 8.1673 1.79107 4.97918 4.97918L6.3934 6.3934C9.20644 3.58035 13.0218 2 17 2V0ZM4.97918 4.97918C1.79107 8.1673 0 12.4913 0 17H2C2 13.0218 3.58035 9.20644 6.3934 6.3934L4.97918 4.97918ZM0 17C0 21.5087 1.79107 25.8327 4.97918 29.0208L6.3934 27.6066C3.58035 24.7936 2 20.9782 2 17H0ZM4.97918 29.0208C8.1673 32.2089 12.4913 34 17 34V32C13.0218 32 9.20644 30.4196 6.3934 27.6066L4.97918 29.0208ZM17 34C21.5087 34 25.8327 32.2089 29.0208 29.0208L27.6066 27.6066C24.7936 30.4196 20.9782 32 17 32V34ZM29.0208 29.0208C32.2089 25.8327 34 21.5087 34 17H32C32 20.9782 30.4196 24.7936 27.6066 27.6066L29.0208 29.0208ZM34 17C34 12.4913 32.2089 8.1673 29.0208 4.97918L27.6066 6.3934C30.4196 9.20644 32 13.0218 32 17H34ZM29.0208 4.97918C25.8327 1.79107 21.5087 0 17 0V2C20.9782 2 24.7936 3.58035 27.6066 6.3934L29.0208 4.97918ZM17 6C14.0826 6 11.2847 7.15893 9.22183 9.22183L10.636 10.636C12.3239 8.94821 14.6131 8 17 8V6ZM9.22183 9.22183C7.15893 11.2847 6 14.0826 6 17H8C8 14.6131 8.94821 12.3239 10.636 10.636L9.22183 9.22183ZM6 17C6 19.9174 7.15893 22.7153 9.22183 24.7782L10.636 23.364C8.94821 21.6761 8 19.3869 8 17H6ZM9.22183 24.7782C11.2847 26.8411 14.0826 28 17 28V26C14.6131 26 12.3239 25.0518 10.636 23.364L9.22183 24.7782ZM17 28C19.9174 28 22.7153 26.8411 24.7782 24.7782L23.364 23.364C21.6761 25.0518 19.3869 26 17 26V28ZM24.7782 24.7782C26.8411 22.7153 28 19.9174 28 17H26C26 19.3869 25.0518 21.6761 23.364 23.364L24.7782 24.7782ZM28 17C28 14.0826 26.8411 11.2847 24.7782 9.22183L23.364 10.636C25.0518 12.3239 26 14.6131 26 17H28ZM24.7782 9.22183C22.7153 7.15893 19.9174 6 17 6V8C19.3869 8 21.6761 8.94821 23.364 10.636L24.7782 9.22183ZM10.3753 8.21913C6.86634 11.0263 4.86605 14.4281 4.50411 18.4095C4.14549 22.3543 5.40799 26.7295 8.13176 31.4961L9.86824 30.5039C7.25868 25.9371 6.18785 21.9791 6.49589 18.5905C6.80061 15.2386 8.46699 12.307 11.6247 9.78087L10.3753 8.21913ZM23.6247 25.7809C27.1294 22.9771 29.1332 19.6127 29.4958 15.6632C29.8549 11.7516 28.5904 7.41119 25.8682 2.64741L24.1318 3.63969C26.7429 8.20923 27.8117 12.1304 27.5042 15.4803C27.2001 18.7924 25.5372 21.6896 22.3753 24.2191L23.6247 25.7809Z"
+            fill="#1F2937"
+          />
+        </svg-->
+        <p class="font-medium items-center text-5xl text-violet-900">NiNu</p>
+      </div>
+
+      <div class="justify-center items-center text-center flex">
+        <svg routerLink="../home" xmlns="http://www.w3.org/2000/svg" class="hover:text-red-600 flex cursor-pointer focus:outline-none text-gray-500 focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section *ngIf="etape === 1">
+  <div class="container mx-auto mt-12 text-center items-center">
+
+    <div  class="inline-block w-fit bg-white border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 py-10 px-20">
+      <div class="flex flex-col items-center pb-10">
+        <img class="mb-8 w-24 h-24" src="assets/images/3.png" alt="Bonnie image">
+        <h5 class="mb-2 text-4xl text-center font-bold text-gray-900 dark:text-white">Where do you want to book?</h5>
+        <span class=" font-semibold text-gray-500 dark:text-gray-400 text-center">Enter your address below – you’ll choose services next.</span>
+        <div class="relative py-16">
+          <form [formGroup]="formGroup">
+            <div class="flex absolute inset-y-0 left-0 items-center pointer-events-none">
+              <svg class="w-6 h-6 text-black dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <!--input type="text" id="input-group-1" class="border-b border-black text-gray-900 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="californie, newyork,..."-->
+            <ngx-google-places-autocomplete (keyup)="onSubmit()" id="input-group-1" class="border-b border-black text-gray-900 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" formControlName="place"></ngx-google-places-autocomplete>
+          </form>
+        </div>
+        <div>
+          <button  (click)="nextEtape()" class="disabled:opacity-50 disabled:hover:bg-violet-900 inline-flex items-center py-4 px-8 text-xl font-bold text-center text-white bg-violet-900 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800">
+            Select your service
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center items-center mt-10 px-10">
+      <p class="text-xl font-medium text-black">- or choose a city -</p>
+    </div>
+
+    <div class="justify-center text-center">
+      <button *ngFor="let lieu of ['New York','Southern California','South Florida','Washington DC','Boston', 'The Hamptons', 'SF & Bay Area', 'Long Island']" (click)="tmpReservation.adress = lieu" type="button" class="{{tmpReservation.adress === lieu ? 'text-violet-900' : 'text-black'}} hover:bg-violet-900 hover:text-white translate-y-10 hover:shadow-2xl shadow font-semibold text-xl px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">{{lieu}}</button>
+    </div>
+
+    <p>
+      <br> <br> <br>
+    </p>
+  </div>
+</section>
+
+<section *ngIf="etape === 2">
+  <div class="container mx-auto mt-12 text-center items-center px-10">
+    <div class="py-7">
+      <h1 class="text-2xl text-center font-bold text-black capitalize lg:text-4xl dark:text-white">Here’s what’s popular in <span class="text-violet-900">{{tmpReservation.adress}}</span> </h1>
+      <p class="text-xl text-gray-500 dark:text-gray-300 text-center py-3 font-semibold">
+        Select one or multiple services to start booking.
+      </p>
+    </div>
+
+    <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 pt-6 gap-8">
+      <div>
+        <h1 class="uppercase text-xl text-center font-semibold text-violet-900 dark:text-white">Blowouts</h1>
+
+        <div class="py-4 space-y-5">
+          <a *ngFor="let item of ['blowout', 'updo', 'blowout + braid']" (click)="tmpReservation.offre = item" class="{{tmpReservation.offre === item ? 'border-t-4 border-violet-900' : 'border border-gray-200'}} cursor-pointer block text-left p-6 max-w-sm bg-white shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">{{item}}</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          </a>
+        </div>
+      </div>
+      <!-- Remove class [ h-24 ] when adding a card block -->
+      <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
+      <div>
+        <h1 class="uppercase text-xl text-center font-semibold text-violet-900 dark:text-white">Makeup</h1>
+
+        <div class="py-4 space-y-5">
+          <a *ngFor="let item of ['makeup',  'special occasion makeup']" (click)="tmpReservation.offre = item" class="{{tmpReservation.offre === item ? 'border-t-4 border-violet-900' : 'border border-gray-200'}} cursor-pointer block text-left p-6 max-w-sm bg-white shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">{{item}}</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          </a>
+        </div>
+      </div>
+      <!-- Remove class [ h-24 ] when adding a card block -->
+      <!-- Remove class [ border-gray-300  dark:border-gray-700 border-dashed border-2 ] to remove dotted border -->
+      <div>
+        <h1 class="uppercase text-xl text-center font-semibold text-violet-900 dark:text-white">Nails</h1>
+
+        <div class="py-4 space-y-5">
+          <a *ngFor="let item of ['manicure', 'makeup lesson']" (click)="tmpReservation.offre = item" class="{{tmpReservation.offre === item ? 'border-t-4 border-violet-900' : 'border border-gray-200'}} cursor-pointer block text-left p-6 max-w-sm bg-white shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">{{item}}</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h1 class="uppercase text-xl text-center font-semibold text-violet-900 dark:text-white">Haircuts</h1>
+
+        <div class="py-4 space-y-5">
+          <a *ngFor="let item of ['haircut + blowout', 'haircut', 'men\'s haircut + braid', 'haircut for 2']" (click)="tmpReservation.offre = item" class="{{tmpReservation.offre === item ? 'border-t-4 border-violet-900' : 'border border-gray-200'}} cursor-pointer block text-left p-6 max-w-sm bg-white shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white capitalize">{{item}}</h5>
+            <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    <br> <br> <br> <br>
+  </p>
+
+  <footer class="bg-white shadow-xl py-3 px-7 fixed bottom-0 left-0 right-0 border-t-2 border-gray-100">
+    <div class="container mx-auto">
+      <nav class="justify-center grid grid-cols-3">
+        <div class="justify-center items-center text-center flex font-bold capitalize">
+          {{tmpReservation.offre}}
+        </div>
+        <div class="justify-center items-center text-center">
+        </div>
+
+        <div class="justify-center items-center text-center flex">
+          <button (click)="nextEtape()" [disabled]="!tmpReservation.offre" class="disabled:opacity-50 disabled:hover:bg-violet-900 inline-flex items-center py-4 px-8 text-xl font-bold text-center text-white bg-violet-900 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800">
+            Select date & time
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </footer>
+</section>
+
+
